@@ -1,4 +1,4 @@
-$(function() {
+function loginregFrom () {
     $('#login-form-link').click(function(e) {
         console.log("Login");
 		$("#login-form").delay(100).fadeIn(100);
@@ -15,4 +15,6 @@ $(function() {
 		$(this).addClass('active');
 		e.preventDefault();
 	});
-});
+};
+
+loginregFrom();
