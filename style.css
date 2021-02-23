@@ -88,15 +88,14 @@ body {
   border-color: #ccc;
 }
 .btn-login {
-  margin: 10px;
-  padding: 10px;
+  margin: 10px 0 10px 0;
+  padding: 10px 0 10px 0;
   background-color: rgb(0, 36, 194);
   outline: none;
   color: #fff;
   font-size: 14px;
   height: auto;
   font-weight: normal;
-  padding: 14px 0;
   text-transform: uppercase;
   border-color: rgb(2, 23, 116);
 }
@@ -119,8 +118,8 @@ body {
 .btn-register {
   background-color: rgb(0, 36, 194);
   margin: 10px;
-  padding-top : 10px;
-  padding-bottom : 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   outline: none;
   color: #fff;
   font-size: 14px;
