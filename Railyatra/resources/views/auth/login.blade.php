@@ -69,9 +69,9 @@
                       <div class="row">
                         <div class="col-lg-12">
                           <div class="text-center">
-                            <a href="#" tabindex="5" class="forgot-password">
+                            <a href="{{ route('password.request') }}" tabindex="5" class="forgot-password">
                             @if (Route::has('password.request'))
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
+                                <!-- <a class="btn btn-link" href="{{ route('password.request') }}"> -->
                                 Forgot Password?
                             @endif
                             </a>
