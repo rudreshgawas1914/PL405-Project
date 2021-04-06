@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\TrainRouteController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,9 +26,9 @@ Route::group(['middleware'=>['auth']],function(){
 //for admin
 Route::group(['middleware'=>['auth', 'role:admin']],function(){
     Route::get('/dashboard/traindetails',[DashboardController::class,'index'])->name('dashboard');
+    Route::get('train-delete/{{id}}',[DashboardController::class,'index'])->name('dashboard');
+    // Route::get('add_train',[TrainRouteController::class,'show']);
 });
-
-
 
 
 require __DIR__.'/auth.php';
