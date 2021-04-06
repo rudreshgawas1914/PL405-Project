@@ -13,7 +13,7 @@ class DashboardController extends Controller
                 return view('/admin/admin_dashboard')->with('trainArr',train_route::all());
 
         }elseif(Auth::user()->hasRole('user')) {
-                 return view('/user/user_dashboard');
+                return view('/user/user_dashboard');
         }
     }
 

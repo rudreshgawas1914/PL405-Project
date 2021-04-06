@@ -44,9 +44,6 @@
               <li class="nav-item">
                 <a class="nav-link text-white" href="admin/userlist">Users</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link text-white" href="admin/dashboard">Admin Dashboard</a>
-              </li>
               <li class="nav-item dropdown">
                 <a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   More

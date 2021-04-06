@@ -58,7 +58,7 @@
                 </ul>
               </li> -->
               <li class="nav-item">
-                <a class="nav-link text-white" href="add_train">Admin Dashboard</a>
+                <a class="nav-link text-white" href="admindashboard">Admin Dashboard</a>
               </li>
               @guest
               <li class="nav-item">

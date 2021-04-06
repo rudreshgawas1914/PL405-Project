@@ -24,7 +24,7 @@ class TrainRouteController extends Controller
      */
     public function create()
     {
-        //
+        return view('/admin/admin_createTrain');
     }
 
     /**
@@ -35,7 +35,16 @@ class TrainRouteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $tr = new train_route;
+        $tr->Train_Name=$request->input('train_name');
+        $tr->Source_Location=$request->input('source_loc');
+        $tr->Departure_Time=$request->input('source_time');
+        $tr->Destination=$request->input('destination_loc');
+        $tr->Arrival_Time=$request->input('destination_time');
+        $tr->Status=$request->input('status');;
+        $tr->save();
+
+        return redirect('admindashboard');
     }
 
     /**
@@ -78,8 +87,10 @@ class TrainRouteController extends Controller
      * @param  \App\Models\train_route  $train_route
      * @return \Illuminate\Http\Response
      */
-    public function destroy(train_route $train_route)
+    public function destroy(train_route $train_route,$id)
     {
-        //
+        print_r($id);
+        train_route::destroy(array('id',$id));
+        return redirect('admindashboard');
     }
 }

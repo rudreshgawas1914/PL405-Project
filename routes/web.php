@@ -25,8 +25,10 @@ Route::group(['middleware'=>['auth']],function(){
 
 //for admin
 Route::group(['middleware'=>['auth', 'role:admin']],function(){
-    Route::get('/dashboard/traindetails',[DashboardController::class,'index'])->name('dashboard');
-    Route::get('train-delete/{{id}}',[DashboardController::class,'index'])->name('dashboard');
+    Route::get('admindashboard',[DashboardController::class,'index'])->name('dashboard');
+    Route::get('train-delete/{id}',[TrainRouteController::class,'destroy']);
+    Route::get('train-create',[TrainRouteController::class,'create'])->name('train-create');
+    Route::post('train-submit',[TrainRouteController::class,'store']);
     // Route::get('add_train',[TrainRouteController::class,'show']);
 });
 
