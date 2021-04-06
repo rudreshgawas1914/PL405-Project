@@ -1,5 +1,7 @@
 @extends('layouts.adminlayout')
 
+<!-- https://gist.github.com/apsdehal/11393083 api -->
+
 @section('content')
 <div class="container-fluid">
     <div class="row m-md-1">
