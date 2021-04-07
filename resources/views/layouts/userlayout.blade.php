@@ -54,9 +54,23 @@
                 </ul>
               </li>
               @guest
-              <li class="nav-item">
-                <a class="nav-link text-white" href="login">LogIn/Register</a>
-              </li>
+              @if (Route::has('login'))
+                  @auth
+                    <li class="nav-item">
+                      <a class="nav-link text-white" href="{{ url('/dashboard') }}">Dashboard</a>
+                    </li>
+                  @else
+                    <li class="nav-item dropdown">
+                      <a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Getting Started</a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="{{ route('login') }}">Login</a></li>
+                        @if (Route::has('register'))
+                          <li><a class="dropdown-item" href="{{ route('register') }}">Register</a></li>
+                        @endif
+                      </ul>
+                    </li>
+                  @endauth
+                @endif
               @else
               <li class="nav-item dropdown">
                 <a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">

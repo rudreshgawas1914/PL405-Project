@@ -35,31 +35,51 @@
               <li class="nav-item">
                 <a class="nav-link active text-white" aria-current="page" href="{{ url('/') }}"><i class="fas fa-home"></i> Home</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link text-white" href="#"><i class="fas fa-ticket-alt"></i> Book Tickets</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white" href="#"><i class="fas fa-train"></i> Track Your Train</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white" href="admin/userlist">Users</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white" href="admin/dashboard">Admin Dashboard</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  More
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <li><a class="dropdown-item" href="#">About Us</a></li>
-                  <li><a class="dropdown-item" href="#">Contact Us</a></li>
-                </ul>
-              </li>
+              @if(Auth::user()->hasRole('user'))
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="#"><i class="fas fa-ticket-alt"></i> Book Tickets</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="#"><i class="fas fa-train"></i> Track Your Train</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="admin/userlist">Users</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    More
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item" href="#">About Us</a></li>
+                    <li><a class="dropdown-item" href="#">Contact Us</a></li>
+                  </ul>
+                </li>
+              @elseif(Auth::user()->hasRole('admin'))
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="admindashboard">Admin Dashboard</a>
+                </li>
+              @elseif(Auth::user()->hasRole('guest'))
+              hello
+              @endif
+              
               @guest
-              <li class="nav-item">
-                <a class="nav-link text-white" href="login">LogIn/Register</a>
-              </li>
+                @if (Route::has('login'))
+                  @auth
+                    <li class="nav-item">
+                      <a class="nav-link text-white" href="{{ url('/dashboard') }}">Dashboard</a>
+                    </li>
+                  @else
+                    <li class="nav-item dropdown">
+                      <a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Getting Started</a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="{{ route('login') }}">Login</a></li>
+                        @if (Route::has('register'))
+                          <li><a class="dropdown-item" href="{{ route('register') }}">Register</a></li>
+                        @endif
+                      </ul>
+                    </li>
+                  @endauth
+                @endif
               @else
               <li class="nav-item dropdown">
                 <a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">

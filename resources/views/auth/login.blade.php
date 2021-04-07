@@ -1,9 +1,12 @@
+@extends('layouts.userlayout')
+
+@section('content')
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
-            <a href="/">
+            <!-- <a href="/">
                 <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
+            </a> -->
         </x-slot>
 
         <!-- Session Status -->
@@ -54,3 +57,4 @@
         </form>
     </x-auth-card>
 </x-guest-layout>
+@endsection
