@@ -1,4 +1,4 @@
-@extends('layouts.userlayout')
+@extends('layouts.layout')
 
 @section('content')
 <x-guest-layout>

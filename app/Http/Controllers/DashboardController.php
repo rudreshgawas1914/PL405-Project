@@ -17,7 +17,10 @@ class DashboardController extends Controller
         }
     }
 
-    
+    public function searchResult(Request $request){
+        return view('/searchresult')->with('trainArr',train_route::all())->with("from",$request->input("from"))->with("to",$request->input("to"));
+    }
+
     public function traindetails(){
         return view('traindetails');
     }

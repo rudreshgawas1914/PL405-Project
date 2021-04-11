@@ -1,4 +1,4 @@
-@extends('layouts.userlayout')
+@extends('layouts.layout')
 
 @section('content')
 <x-guest-layout>
@@ -10,7 +10,7 @@
         </x-slot>
 
         <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+        <x-auth-validation-errors class="mb-0" :errors="$errors" />
 
         <form method="POST" action="{{ route('register') }}">
             @csrf

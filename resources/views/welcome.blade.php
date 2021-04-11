@@ -1,4 +1,4 @@
-@extends('layouts.userlayout')
+@extends('layouts.layout')
 
 @section('content')
 	<!-- <body class="antialiased">
@@ -24,24 +24,25 @@
 		<div class="col-lg-7 hidden-sm hidden-xs">
 			<!-- <center> -->
 			<div class="search-panel1">
-				<div class="row">
+				<div class="row text-center">
 					<h2><strong>Booking Ticket</strong></h2>
 				</div>
-				<form style="padding: 1% 5% 5% 5%">
+				<form autocomplete="off" style="padding: 1% 5% 5% 5%" action="searchresult">
+				@csrf
 					<!-- <div class="row bg-warning"> -->
 					<div class="row">
 						<div class="col-lg-5">
 							<div class="row">
-								<input type="text" class="form-control text-center" id="From" placeholder="&#xf124 From">
-							</div>
-							<div class="row">
-								<input type="text" class="form-control text-center" id="To" placeholder="&#xf3c5 To">
+								<input type="text" class="form-control text-center" id="From" name="from" placeholder="&#xf124 From" requiired>
 							</div>
 						</div>
-						<div class="col-lg-1 "></div>
+						<div class="col-lg-2"></div>
 						<div class="col-lg-5">
 							<div class="row">
-								<input type="date" class="form-control text-center" id="on" placeholder="&#65 Date">
+								<input type="text" class="form-control text-center" id="To" name="to" placeholder="&#xf3c5 To" required>
+							</div>
+							<!-- <div class="row">
+								<input type="date" class="form-control text-center" id="on" name="date" placeholder="&#65 Date">
 							</div>
 							<div class="row">
 								<select class="form-select text-center" aria-label="Default select example">
@@ -51,10 +52,10 @@
 									<option value="3">Three</option>
 								</select>
 								<input type="text" class="form-control text-center" id="catagory" placeholder="catagory">
-							</div>
+							</div> -->
 						</div>
 					</div>
-					<center><button type="submit" class="btn btn-primary">Submit</button></center>
+					<center><button type="submit" class="btn btn-primary"><i class="fas fa-search"></i> Search</button></center>
 				</form>
 			</div>
 			<!-- </center> -->

@@ -15,6 +15,7 @@ class CreateTrainRoutesTable extends Migration
     {
         Schema::create('train_routes', function (Blueprint $table) {
             $table->id();
+            $table->string('Train_No');
             $table->string('Train_Name');
             $table->string('Source_Location');
             $table->dateTime('Departure_Time');

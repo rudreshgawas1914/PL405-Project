@@ -149,15 +149,17 @@ header {
 
 /*///HOME LAYOUT///*/
 .search-panel1 {
-    margin : 20px auto 20px auto;
+    margin: 20px auto 20px auto;
     background-color: white;
+    padding: 1%;
     border-radius: 10px;
     box-shadow: 5px 5px 5px 5px #888888;
 }
 
-.search-panel1 > div > h2 {
-    padding: 2%;
-    text-align: center;
+.search-panel1-input{
+    color: red;
+    border : solid red;
+    margin: 1%;
 }
 
 @media screen and (max-width: 1024px) {
@@ -219,16 +221,15 @@ input[type="text"] {
     border: solid 1px black;
 }
 
-
-
 /*CREATE TRAIN FORM*/
 .panel-create-train {
     margin: 20px;
     padding: 40px;
     padding-top: 0px;
     margin-top: 50px;
-    background-color: #ffffff;
+    background-color: white;
     border-color: #ccc;
+    border-radius: 10px;
     -webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
     box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);

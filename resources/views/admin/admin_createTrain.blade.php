@@ -1,6 +1,6 @@
-@extends('layouts.adminlayout')
+@extends('layouts.layout')
 
-<!-- https://gist.github.com/apsdehal/11393083 api -->
+<!-- https://github.com/datameet/railways api -->
 
 @section('content')
 <div class="container-fluid">
@@ -11,39 +11,49 @@
                     <div class="row">
                         <h2><strong>Add Train</strong></h2>
                     </div>
-                    <form style="padding: 1% 5% 5% 5%" action="train-submit" method="post">
+                    <form autocomplete="off" style="padding: 1% 5% 5% 5%" action="train-submit" method="post" onClick="submitValidation()">
                         @csrf
                         <!-- <div class="row bg-warning"> -->
-                            <div class="row">
+                        <div class="row">
                                 <label>Train Name : </label>
-                                <input type="text" class="form-control text-center" id="trainname" name="train_name" placeholder="" required="">
+                                <select class="form-control text-center" id="trainname-dropdown" name="train_name" required>
+                                <input type="text" id="trainid_box" name="train_no"/>
+                            </select>
                             </div>
                             <div class="row">
                                 <div class="col-lg-5">
                                     <div class="row">
                                         <label>Enter Source : </label>
-                                        <input type="text" class="form-control text-center" id="source_loc" name="source_loc" placeholder="" required="">
+                                        <select class="form-control text-center" id="source-dropdown" name="source_loc" disabled></select>
+                                        <!-- <input type="text" id="sourceid_box" name="sourceStation_no"/> -->
                                     </div>
-                                    <br>
+                                    <!-- <div class="row">
+                                        <label>Source Country : </label>
+                                        <input type="text" class="form-control text-center" id="source_con" name="source_con" readonly requiired>
+                                    </div> -->
                                     <div class="row">
                                         <label>Enter Departure Time : </label>
-                                        <input type="datetime-local" class="form-control text-center" id="source_time" name="source_time" placeholder="" required="">
+                                        <input type="datetime-local" step="1" class="form-control text-center" id="source_time" name="source_time">
                                     </div>
                                 </div>
                                 <div class="col-lg-2"></div>
                                 <div class="col-lg-5">
                                     <div class="row">
                                         <label>Enter Destination : </label>
-                                        <input type="text" class="form-control text-center" id="destination_loc" name="destination_loc" placeholder="" required="">
+                                        <input type="text" class="form-control text-center" id="destination-dropdown" name="destination_loc" readonly requiired>
+                                        <!-- <input type="text" id="destinationid_box" name="destinationStation_no"/> -->
                                     </div>
-                                    <br>
+                                    <!-- <div class="row">
+                                        <label>Destination Country : </label>
+                                        <input type="text" class="form-control text-center" id="destination_con" name="destination_con" readonly requiired>
+                                    </div> -->
                                     <div class="row">
                                         <label>Enter Arrival Time : </label>
-                                        <input type="datetime-local" class="form-control text-center" id="destination_time" name="destination_time" min=source_time placeholder="" required="">
+                                        <input type="datetime-local" step="1" class="form-control text-center" id="destination_time" name="destination_time" placeholder="" required>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
+                            <!-- <div class="row">
                                 <center>
                                     <div class="col-lg-5">
                                         <label>Status : </label>
@@ -55,7 +65,7 @@
                                         </select>
                                     </div>
                                 </center>
-                            </div>
+                            </div> -->
                             <br>
                             <center>
                                 <button type="submit" id="submit" name="submit" class="btn btn-primary">Add Train</button>
@@ -65,4 +75,5 @@
                 </center>
             </div>
         </div>
+        <script src="{{url('javascript/trainDetails.js')}}"></script>
         @endsection

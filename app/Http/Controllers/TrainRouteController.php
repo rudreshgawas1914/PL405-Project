@@ -36,12 +36,13 @@ class TrainRouteController extends Controller
     public function store(Request $request)
     {
         $tr = new train_route;
+        $tr->Train_No=$request->input('train_no');
         $tr->Train_Name=$request->input('train_name');
         $tr->Source_Location=$request->input('source_loc');
         $tr->Departure_Time=$request->input('source_time');
         $tr->Destination=$request->input('destination_loc');
         $tr->Arrival_Time=$request->input('destination_time');
-        $tr->Status=$request->input('status');;
+        $tr->Status='Scheduled';
         $tr->save();
 
         return redirect('admindashboard');
