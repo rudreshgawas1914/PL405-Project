@@ -1,3 +1,5 @@
+// https://github.com/datameet/railways
+
 let dropdown = document.getElementById('trainname-dropdown');
 dropdown.length = 0;
 
@@ -141,8 +143,9 @@ function changeListener(){
                     to_dropdown.innerHTML = to[j];
                     to_dropdown.value = to[j];
 
-                    set_country(globaldata[i][2],globaldata[i][4])
+                    console.log(from[j]);
 
+                    set_country(globaldata[i][2],globaldata[i][4])
                     // console.log(from,to);
                     // if(to[j]==to[j-1]) to.pop()
                     // if(from[j]==from[j-1]) from.pop()
