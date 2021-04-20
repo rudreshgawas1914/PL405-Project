@@ -123,8 +123,7 @@
 
       @show
     </div>
-
-
+    
     <div class="footer">
       @section('footer')
       <footer class="text-center text-lg-start text-white" style="background-color: rgb(0, 36, 194);width:100%;">
