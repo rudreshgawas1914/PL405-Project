@@ -143,15 +143,56 @@ header {
 }
 /*///HOME LAYOUT///*/
 .search-panel1 {
-    margin: 20px auto 20px auto;
+    margin: 2% auto 2px auto;
     background-color: white;
     padding: 1%;
     border-radius: 10px;
-    box-shadow: 5px 5px 5px 5px #888888;
+    box-shadow: 5px 5px 5px 2px lightgray;
+    height: auto;
 }
 
 .search-panel1-input{
+<<<<<<< HEAD
+    margin-left: 1%;
+}
+
+.search-panel2 {
+    margin: 1% auto 1px auto;
+    background-color: white;
+    padding: 1%;
+    border-radius: 10px;
+    height: auto;
+}
+
+.search-panel2 > div {
+    /*padding: 1%;*/
+}
+
+.search-panel2 > .station-details > div{
+    background-color: lightblue;
+    padding: 1%;
+    font-size: 120%;
+}
+
+.toright{
+    text-align: right;
+}
+
+.search-panel2 > div > button {
+    margin: 1% auto 0% auto;
+    width: auto;
+    background-color: blue;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+=======
     margin: 1%;
+>>>>>>> 32f32d3e2e1c5b0a6a1cda5312a67dd800aa1585
 }
 
 @media screen and (max-width: 1024px) {

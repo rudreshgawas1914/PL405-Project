@@ -1,46 +1,28 @@
 @extends('layouts.layout')
 
 @section('content')
-	<!-- <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Log in</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-        </div>
-    </body> -->
-
-    <div class="container-fluid">
+<div class="container-fluid" style="margin: 0">
 	<div class="row m-md-1">
 		<div class="col-lg-7 hidden-sm hidden-xs">
 			<!-- <center> -->
-			<div class="search-panel1">
-				<div class="row text-center">
-					<h2><strong>Booking Ticket</strong></h2>
-				</div>
-				<form autocomplete="off" style="padding: 1% 5% 5% 5%" action="searchresult">
-				@csrf
-					<!-- <div class="row bg-warning"> -->
-					<div class="row">
-						<div class="col-lg-5">
+				<div class="search-panel1">
+					<div class="row text-center">
+						<h2><strong>Booking Ticket</strong></h2>
+					</div>
+					<form autocomplete="off" style="padding: 1% 5% 5% 5%" action="searchresult">
+						@csrf
+						<!-- <div class="row bg-warning"> -->
 							<div class="row">
-								<input type="text" class="form-control text-center" id="From" name="from" placeholder="&#xf124 From" requiired>
-							</div>
-						</div>
-						<div class="col-lg-2"></div>
-						<div class="col-lg-5">
-							<div class="row">
-								<input type="text" class="form-control text-center" id="To" name="to" placeholder="&#xf3c5 To" required>
-							</div>
+								<div class="col-lg-5">
+									<div class="row">
+										<input type="text" class="form-control text-center" id="From" name="from" placeholder="&#xf124 From">
+									</div>
+								</div>
+								<div class="col-lg-2"></div>
+								<div class="col-lg-5">
+									<div class="row">
+										<input type="text" class="form-control text-center" id="To" name="to" placeholder="&#xf3c5 To">
+									</div>
 							<!-- <div class="row">
 								<input type="date" class="form-control text-center" id="on" name="date" placeholder="&#65 Date">
 							</div>
@@ -62,7 +44,7 @@
 		</div>
 
 		<!-- <div class="col-lg-1 col-md-3 hidden-sm bg-white hidden-xs leftTitle">
-        </div> -->
+		</div> -->
 		<!-- class="text-white" -->
 		<div class="col-lg-5 text-white hidden-sm hidden-xs justify-content-center">
 			<center>
@@ -74,7 +56,27 @@
 		</div>
 	</div>
 	<div class="row m-md-1">
-		<img src="{{url('images/bg2.jpg')}}" alt="logo" style="padding-top: 20px; width: 100%;height: auto;" />
+		<div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="margin-top: 100px;">
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img class="d-block w-100" src="{{url('images/slider1.jpg')}}" alt="First slide" style="width: 100%;height: 400px;object-fit: scale-down;">
+				</div>
+				<div class="carousel-item">
+					<img class="d-block w-100" src="{{url('images/slider1.jpg')}}." alt="Second slide" style="width: 100%;height: 400px;object-fit: scale-down;>
+				</div>
+				<div class="carousel-item">
+					<img class="d-block w-100" src="{{url('images/slider1.jpg')}}" alt="Third slide" style="width: 100%;height: 400px;object-fit: scale-down;>
+				</div>
+			</div>
+			<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>
 	</div>
 </div>
 @endsection

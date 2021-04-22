@@ -123,11 +123,10 @@
 
       @show
     </div>
-
-
+    
     <div class="footer">
       @section('footer')
-      <footer class="text-center text-lg-start text-white" style="background-color: rgb(0, 36, 194);width:100%">
+      <footer class="text-center text-lg-start text-white" style="background-color: rgb(0, 36, 194);width:100%;">
         <!-- Grid container -->
         <div class="container  p-4 pb-0">
           <!-- Section: CTA -->
@@ -170,7 +169,7 @@
         <!-- Copyright -->
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
           © 2021 Copyright:
-          <a class="text-white" href="https://mdbootstrap.com/">railyatri.com</a>
+          <a class="text-white" href="">railyatri.com</a>
         </div>
         <!-- Copyright -->
       </footer>
