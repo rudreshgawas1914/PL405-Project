@@ -180,4 +180,26 @@ class TrainRouteController extends Controller
         return redirect('admindashboard');
         }
     }
+
+    public function changeArrivalTime(train_route $train_route,Request $request,$id){
+        $tr = train_route::find($id);
+        if($tr->Departure_Time==$request->input('newtime')){
+            return redirect('admindashboard');
+        }else{
+        $tr->Departure_Time=$request->input('newtime');
+        $tr->save();
+            return redirect('admindashboard');
+        }
+    }
+
+    public function changeDepartureTime(train_route $train_route,Request $request,$id){
+        $tr = train_route::find($id);
+        if($tr->Arrival_Time==$request->input('newtime')){
+            return redirect('admindashboard');
+        }else{
+        $tr->Arrival_Time=$request->input('newtime');
+        $tr->save();
+            return redirect('admindashboard');
+        }
+    }
 }

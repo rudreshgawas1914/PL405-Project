@@ -34,7 +34,7 @@ class DashboardController extends Controller
     }
 
     public function dashboard(){
-        return view('/user/user_dashboard');
+        return view('/user/user_dashboard')->with("userid",Auth::user()->id);
     }
 
     public function traindetails(){

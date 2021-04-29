@@ -18,11 +18,12 @@ Route::group(['middleware'=>['auth', 'role:admin']],function(){
     Route::get('train-create',[TrainRouteController::class,'create'])->name('train-create');
     Route::post('train-submit',[TrainRouteController::class,'store']);
     Route::get('train-statuschange/{id}',[TrainRouteController::class,'changestatus']);
+    Route::get('train-statusArrival/{id}',[TrainRouteController::class,'changeArrivalTime']);
+    Route::get('train-statusDeparture/{id}',[TrainRouteController::class,'changeDepartureTime']);
     Route::get('train-updateform/{id}',[TrainRouteController::class,'updateform']);
 });
 
 Route::group(['middleware'=>['auth', 'role:user']],function(){
-    // Route::get('/', function () {return view('dashboard');});
     Route::get('/profile',[DashboardController::class,'dashboard']);
 });
 

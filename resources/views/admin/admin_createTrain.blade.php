@@ -13,7 +13,6 @@
                     </div>
                     <form autocomplete="off" style="padding: 1% 5% 5% 5%" action="train-submit" method="post">
                         @csrf
-                        <!-- <div class="row bg-warning"> -->
                         <div class="row">
                                 <label>Train Name : </label>
                                 <select class="form-control text-center" id="trainname-dropdown" name="train_name" required>
@@ -25,12 +24,7 @@
                                     <div class="row">
                                         <label>Enter Source : </label>
                                         <select class="form-control text-center" id="source-dropdown" name="source_loc" disabled required></select>
-                                        <!-- <input type="text" id="sourceid_box" name="sourceStation_no"/> -->
                                     </div>
-                                    <!-- <div class="row">
-                                        <label>Source Country : </label>
-                                        <input type="text" class="form-control text-center" id="source_con" name="source_con" readonly requiired>
-                                    </div> -->
                                     <div class="row">
                                         <label>Enter Departure Time : </label>
                                         <input type="datetime-local" step="1" class="form-control text-center" id="source_time" name="source_time" required="">
@@ -56,7 +50,11 @@
                                             <label class="form-check-label" for="">Seats : </label>
                                             <input class="form-control text-center" type="number" name="1a-seats" id="1a-seats" min=0>
                                             <label class="form-check-label" for="">Prize Per Seat : </label>
-                                            <input class="form-control text-center" type="text" name="1a-prize" id="1a-prize" class="prize-admin">
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text">₹</span>
+                                                <input type="number" class="form-control" type="text" name="1a-prize" id="1a-prize">
+                                                <span class="input-group-text">.00</span>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-md-3 cat">
@@ -66,7 +64,11 @@
                                             <label class="form-check-label" for="">Seats : </label>
                                             <input class="form-control text-center" type="number" name="2a-seats" id="2a-seats" min=0>
                                             <label class="form-check-label" for="">Prize Per Seat : </label>
-                                            <input class="form-control text-center" type="text" name="2a-prize" id="2a-prize" class="prize-admin">
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text">₹</span>
+                                                <input class="form-control" type="number" name="2a-prize" id="2a-prize">
+                                                <span class="input-group-text">.00</span>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-md-3 cat">
@@ -76,7 +78,11 @@
                                             <label class="form-check-label" for="">Seats : </label>
                                             <input class="form-control text-center" type="number" name="3a-seats" id="3a-seats" min=0>
                                             <label class="form-check-label" for="">Prize Per Seat : </label>
-                                            <input class="form-control text-center" type="text" name="3a-prize" id="3a-prize" class="prize-admin">
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text">₹</span>
+                                                <input class="form-control" type="number" name="3a-prize" id="3a-prize">
+                                                <span class="input-group-text">.00</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -88,7 +94,11 @@
                                             <label class="form-check-label" for="">Seats : </label>
                                             <input class="form-control text-center" type="number" name="fc-seats" id="fc-seats" min=0>
                                             <label class="form-check-label" for="">Prize Per Seat : </label>
-                                            <input class="form-control text-center" type="text" name="fc-prize" id="fc-prize" class="prize-admin">
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text">₹</span>
+                                                <input class="form-control" type="number" name="fc-prize" id="fc-prize">
+                                                <span class="input-group-text">.00</span>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-md-3 cat">
@@ -98,7 +108,11 @@
                                             <label class="form-check-label" for="">Seats : </label>
                                             <input class="form-control text-center" type="number" name="cc-seats" id="cc-seats" min=0>
                                             <label for="">Prize Per Seat : </label>
-                                            <input class="form-control text-center" type="text" name="cc-prize" id="cc-prize" class="prize-admin">
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text">₹</span>
+                                                <input class="form-control" type="number" name="cc-prize" id="cc-prize">
+                                                <span class="input-group-text">.00</span>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-md-3 cat">
@@ -108,7 +122,11 @@
                                             <label class="form-check-label" for="">Seats : </label>
                                             <input class="form-control text-center" type="number" name="ss-seats" id="sl-seats" min=0>
                                             <label class="form-check-label" for="">Prize Per Seat : </label>
-                                            <input class="form-control text-center" type="text" name="sl-prize" id="ss-prize" class="prize-admin">
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text">₹</span>
+                                                <input class="form-control" type="number" name="sl-prize" id="sl-prize">
+                                                <span class="input-group-text">.00</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -120,7 +138,11 @@
                                             <label class="form-check-label" for="">Seats : </label>
                                             <input class="form-control text-center" type="number" name="2s-seats" id="2s-seats" min=0>
                                             <label class="form-check-label" for="">Prize Per Seat : </label>
-                                            <input class="form-control text-center" type="text" name="2s-prize" id="2s-prize" class="prize-admin">
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text">₹</span>
+                                                <input class="form-control" type="number" name="2s-prize" id="2s-prize">
+                                                <span class="input-group-text">.00</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

@@ -23,12 +23,25 @@
                     
                     <div class="RouteTitle">Start Point</div>
                     <div class="RouteDesc">{{$train->Source_Location}}</div>
-                    <div class="RouteTime">{{$train->Departure_Time}}</div>
+                    <div class="RouteTime row">
+                        <div class="col">
+                            {{$train->Departure_Time}}
+                        </div>
+                        <button class="col-md-1" style="background-color: inherit;border:none;padding: 0;margin: 0" onclick="editArrivalTime('{{$train->id}}',this,'{{$train->Departure_Time}}','{{$train->Arrival_Time}}')">
+                            <i class="fas fa-edit"></i>
+                        </button></div>
                     <div class="RouteTitle">End Point</div>
                     <div class="RouteDesc">{{$train->Destination}}</div>
-                    <div class="RouteTime">{{$train->Arrival_Time}}</div>
+                    <div class="RouteTime row">
+                        <div class="col">
+                            {{$train->Arrival_Time}}
+                        </div>
+                        <button class="col-md-1" style="background-color: inherit;border:none;padding: 0;margin: 0" onclick="editDepartureTime('{{$train->id}}',this,'{{$train->Departure_Time}}')">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                    </div>
                 </p>
-                <button type="button" onclick="window.location.href='train-updateform/{{$train->id}}'">Edit</button>
+                <button type="button" onclick="window.location.href='train-updateform/{{$train->id}}'">View</button>
                 <button type="button" onclick="window.location.href='train-delete/{{$train->id}}'">Delete</button>
                 <div class="col">
                     <form action="train-statuschange/{{$train->id}}">
