@@ -206,6 +206,28 @@ function find_duplicate_in_array(array){
  return result;	
 }
 
+function catagorycheck(checkbox) {
+    var checkBox = document.getElementById(checkbox);
+    // var text = document.getElementById("text");
+    var text = checkBox.nextElementSibling;
+    var input = checkBox.nextElementSibling.querySelectorAll("input");
+
+    if (checkBox.checked == true){
+        input[0].required = true
+        input[1].required = true
+        text.style.visibility = "visible";
+        text.style.opacity = "1";
+        text.style.display = "block";
+    } else {
+        input[0].required = false
+        input[1].required = false
+        text.style.visibility = "hidden";
+        text.style.opacity = "0";
+        text.style.display = "none";
+    }
+}
+
+
 function submitValidation() {
     if((train_id=="")&&(from_time=="")&&(to_time=="")&&(from_dropdown=="")&&(to_dropdown=="")){
         alert("Fields are incomplete");

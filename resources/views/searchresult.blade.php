@@ -7,12 +7,12 @@
     </div>
     <form autocomplete="off" style="padding: 1% 1% 5% 1%" action="searchresult">
                 @csrf
-<<<<<<< HEAD
                     <div class="row align-center">
                         <div class="col-lg-3">
                                 <input type="text" class="form-control text-center search-panel1-input" id="From" name="from" placeholder="&#xf124 From" requiired>
                         </div>
                         <div class="col-lg-3">
+<<<<<<< Updated upstream
                                 <input type="text" class="form-control text-center search-panel1-input" id="To" name="to" placeholder="&#xf3c5 To" required>
                         </div>
                         <!-- <div class="col-lg-2">
@@ -70,15 +70,21 @@
                             <div class="row">
 >>>>>>> 32f32d3e2e1c5b0a6a1cda5312a67dd800aa1585
 >>>>>>> 5d6b533dd5c72d890a79150b40878ea6e27f2450
+=======
+                                <input type="text" class="form-control text-center search-panel1-input" id="To" name="to" placeholder="&#xf3c5 To" required>
+                        </div>
+                        <div class="col-lg-2" >
+                            <div class="row">
+>>>>>>> Stashed changes
                                 <button type="submit" class="btn btn-primary search-panel1-input"><i class="fas fa-search"></i> Search</button>
                         </div>
                     </div>
                 </form>
-
-</div>
+            </div>
 @foreach($trainArr as $train)
 @if (strpos(strtoupper($train->Source_Location),strtoupper($from)) !== false)
     @if (strpos(strtoupper($train->Destination),strtoupper($to)) !== false)
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -114,21 +120,24 @@
 =======
         <div class="panel-create-train">
             
+=======
+        <div class="panel-create-train">          
+>>>>>>> Stashed changes
             <div class="trainName">
                 <h4>{{$train->Train_Name}} &emsp; Train : {{$train->Train_No}} &nbsp;
                 <button type="button" class="btn btn-link">CHECK SEATS</button></h4></div>
-            
             <div class="trainTime">
                  {{$train->Departure_Time}} || {{$train->Source_Location}}
                     &emsp;
                  {{$train->Arrival_Time}} || {{$train->Destination}}
-            </div>
-            
-                
+            </div>  
             <div class="btn" style="margin-left: 70%;"><button type="button" class="btn btn-primary" onclick=""><i class="fas fa-search"></i>Book Ticket</button></div>
+<<<<<<< Updated upstream
             
 >>>>>>> 32f32d3e2e1c5b0a6a1cda5312a67dd800aa1585
 >>>>>>> 5d6b533dd5c72d890a79150b40878ea6e27f2450
+=======
+>>>>>>> Stashed changes
         </div>
     @endif
 @endif
