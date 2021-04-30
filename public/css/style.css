@@ -1,12 +1,10 @@
 * {
     font-style: "FontAwesome", ubuntu;
 }
-
 .logo {
     height: 50px;
     width: auto;
 }
-
 body {
     /* background-color: #ced6ee; */
     /*background-color: red;*/
@@ -15,10 +13,8 @@ body {
     background-position: center;
     background-repeat: no-repeat;
 }
-
 header {
 }
-
 .panel-login {
     margin: 20px;
     padding: 40px;
@@ -125,7 +121,6 @@ header {
     text-decoration: underline;
     color: #666;
 }
-
 .btn-register {
     background-color: rgb(0, 36, 194);
     margin: 10px;
@@ -146,7 +141,6 @@ header {
     background-color: rgb(39, 67, 194);
     border-color: rgb(2, 23, 116);
 }
-
 /*///HOME LAYOUT///*/
 .search-panel1 {
     margin: 2% auto 2px auto;
@@ -195,6 +189,7 @@ header {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+<<<<<<< HEAD
     /* margin: 1%; */
 }
 
@@ -202,12 +197,12 @@ header {
     .leftTitle {
         display: none !important;
     }
+=======
+>>>>>>> 5681d00953192cc8a9db322c963e960b7a05ddf8
 }
-
 input[type="text"] {
     font-family: FontAwesome;
 }
-
 /* ///DASHBOARD LAYOUT/// */
 .display-trains {
     margin: 1%;
@@ -218,12 +213,10 @@ input[type="text"] {
     flex-wrap: wrap;
     flex-direction: row;
 }
-
 .train-box {
     transition: transform 0.2s;
     margin: 1.5%;
 }
-
 .train-box > .addbtn {
     background-color: DodgerBlue; /* Blue background */
     border: none; /* Remove borders */
@@ -233,30 +226,47 @@ input[type="text"] {
     cursor: pointer; /* Mouse pointer on hover */
     border-radius: 10px;
 }
-
 .RouteTitle {
     font-weight: bold;
 }
-
 .RouteDesc {
     padding: 0;
 }
-
 .RouteTime {
     margin-top: 0;
     font-weight: lighter;
 }
-
 .train-box:hover {
     transform: scale(1.05);
 }
-
 .train-box > div > button {
     border-radius: 5px;
     background-color: white;
     border: solid 1px black;
 }
+<<<<<<< Updated upstream
+=======
 
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: none
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #cca300; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #997a00; 
+}
+
+>>>>>>> Stashed changes
 /*CREATE TRAIN FORM*/
 .panel-create-train {
     margin: 20px;
@@ -267,6 +277,7 @@ input[type="text"] {
     border-color: #ccc;
     border-radius: 10px;
     -webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
+
     -moz-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
     box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
 }
@@ -289,6 +300,45 @@ input[type="text"] {
 }
 
 
+.cat{
+    background-color: gray;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 5px 5px 10px;
+    border-radius: 10px;
+    width: 30%;
+    height: auto;
+}
+
+.cat > input{
+    /*width: 10%;*/
+}
+
+.cat > div{
+    transition: width 2s;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+}
+
+.cat > div > input{
+    width: 90%;
+}
+
+.prize-admin{
+    
+}
+
+@media screen and (max-width: 1024px) {
+    .leftTitle {
+        display: none !important;
+    }
+
+    .cat{
+        width: 100%;
+    }
+}
+
 
 
 
@@ -306,8 +356,7 @@ footer {
     margin: 0;
     margin-top: 10px;
 }
-
 /* containers */
 form > div {
     padding: 10px;
-}
+   } 

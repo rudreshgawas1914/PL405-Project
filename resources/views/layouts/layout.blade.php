@@ -33,16 +33,19 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <div class="col-md-10">
             <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active text-white" aria-current="page" href="{{ url('/') }}"><i class="fas fa-home"></i> Home</a>
-              </li>
               @guest
                 @if (Route::has('login'))
                   @auth
                     <li class="nav-item">
+                      <a class="nav-link active text-white" aria-current="page" href="{{ url('/') }}"><i class="fas fa-home"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
                       <a class="nav-link text-white" href="{{ url('/dashboard') }}">Dashboard</a>
                     </li>
                   @else
+                    <li class="nav-item">
+                      <a class="nav-link active text-white" aria-current="page" href="{{ url('/') }}"><i class="fas fa-home"></i> Home</a>
+                    </li>
                     <li class="nav-item">
                       <a class="nav-link text-white" href="#"><i class="fas fa-ticket-alt"></i> Book Tickets</a>
                     </li>
@@ -72,19 +75,25 @@
               @else
               @if(Auth::user()->hasRole("user"))
               <li class="nav-item">
+                <a class="nav-link active text-white" aria-current="page" href="{{ url('/') }}"><i class="fas fa-home"></i> Home</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link text-white" href="#"><i class="fas fa-ticket-alt"></i> Book Tickets</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link text-white" href="#"><i class="fas fa-train"></i> Track Your Train</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="profile">Profile</a>
+              </li>
               @elseif(Auth::user()->hasRole("admin"))
+              <li class="nav-item">
+                <a class="nav-link text-white" href="dashboard"><i class="fas fa-home"></i>Home</a>
+              </li>
               <li class="nav-item">
                 <a class="nav-link text-white" href="admin/userlist">Users</a>
               </li>
               @endif
-              <li class="nav-item">
-                <a class="nav-link text-white" href="dashboard">{{Auth::user()->roles->first()->name}} Dashboard</a>
-              </li>
               <li class="nav-item dropdown">
                 <a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   More
