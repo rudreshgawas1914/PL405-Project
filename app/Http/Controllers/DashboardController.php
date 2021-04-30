@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\train_route;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -23,5 +22,16 @@ class DashboardController extends Controller
 
     public function traindetails(){
         return view('traindetails');
+    }
+
+
+    public function bookticket(train_route $train_route,$id){
+        $tr = $train_route::find($id);
+        return view('user/bookticket')->with('train',$tr)->with("userid",Auth::user()->id);
+    }
+
+    public function store_ticket(train_route $train_route,$id){
+        $tr = $train_route::find($id);
+        return view('user/store_ticket');
     }
 }

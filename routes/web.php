@@ -19,9 +19,11 @@ Route::group(['middleware'=>['auth', 'role:admin']],function(){
 });
 
 Route::group(['middleware'=>['auth', 'role:user']],function(){
-    // Route::get('/', function () {return view('dashboard');});
+    Route::get('/', function () {return view('welcome');});
 });
 
 Route::get('searchresult',[DashboardController::class,'searchResult'])->name('searchresult');
+Route::get('bookticket/{id}',[DashboardController::class,'bookticket'])->name('bookticket');
+Route::get('store_ticket/{id}/{userid}',[BookingController::class,'store_ticket'])->name('store_ticket');
 
 require __DIR__.'/auth.php';
