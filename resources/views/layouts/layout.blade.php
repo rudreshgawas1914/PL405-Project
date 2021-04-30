@@ -64,9 +64,9 @@
                     <li class="nav-item dropdown">
                       <a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Getting Started</a>
                       <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="{{ route('login') }}">Login</a></li>
+                        <li><a class="dropdown-item" id="loginpage" href="{{ route('login') }}">Login</a></li>
                         @if (Route::has('register'))
-                          <li><a class="dropdown-item" href="{{ route('register') }}">Register</a></li>
+                          <li><a class="dropdown-item" id="registrationpage" href="{{ route('register') }}">Register</a></li>
                         @endif
                       </ul>
                     </li>
