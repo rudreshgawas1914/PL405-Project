@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\booking;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class BookingController extends Controller
@@ -23,9 +23,24 @@ class BookingController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $count = $request->input('count');
+        for ($i=1; $i <= $count; $i++) {
+            $bt = new booking;
+            $bt->train_id=$request->input('train-id');
+            $bt->user_id=Auth::user()->id;
+            $bt->name=$request->input($i . '' . 'catagory');
+            $bt->class=$request->input($i . '' . 'catagory');
+            $bt->gender=$request->input($i . '' . 'gender');
+            $bt->age=$request->input($i . '' . 'age');
+            $bt->address=$request->input($i . '' . 'address');
+            $bt->contact_no=$request->input($i . '' . 'contact');
+            $bt->email=$request->input($i . '' . 'email');
+            $bt->status="booked";
+            $bt->save();
+        }
+        return redirect('/user_dashboard')->with('userid',Auth::user()->id);
     }
 
     /**
@@ -34,22 +49,9 @@ class BookingController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request,$routeid,$userid)
+    public function store(Request $request,$routeid)
     {
-        $count = $request->input('count');
-        $bt = new book_ticket;
-        $bt->train_id=$routeid;
-        $bt->user_id=$userid;
-        $bt->save();
-        for($i=1;$i< $count;$i++){
-            $bt = new book_ticket;
-            $bt->train_id=$routeid;
-            $bt->user_id=$userid;
-            $bt->name=$request->input($i+'name');
-            $bt->save();
-        }
-        return view('store_ticket');
-        
+		return redirect('user_dashboard');
     }
 
     /**
@@ -58,9 +60,26 @@ class BookingController extends Controller
      * @param  \App\Models\booking  $booking
      * @return \Illuminate\Http\Response
      */
+	 
+	public function add_ticket(Request $request){
+		return redirect('user_dashboard');
+	}
+	 
     public function show(booking $booking)
     {
-        
+        return $routeid;
+        $count = $request->input('count');
+        $bt = new book_ticket;
+        $bt->train_id=$request->input('train-id');
+        $bt->user_id=Auth::user()->id;
+        $bt->save();
+		//for($i=1;$i< $count;$i++){
+        //		$bt = new book_ticket;
+		//		$bt->train_id=$routeid;
+        //		$bt->user_id=$userid;
+        //		$bt->name=$request->input($i+'name');
+        //		$bt->save();
+		//}
     }
 
     /**
@@ -95,5 +114,9 @@ class BookingController extends Controller
     public function destroy(booking $booking)
     {
         //
+    }
+
+    public function ticket(){
+        
     }
 }

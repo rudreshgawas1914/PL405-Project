@@ -1,20 +1,21 @@
 function addperson() {
     var table = document.getElementById("person");
-
     var length = table.rows.length;
     console.log(length)
-var row = table.insertRow(length++);
-row.innerHTML = "NEW CELL1";
+    var row = table.insertRow(length++);
+    row.innerHTML = "NEW CELL1";
 }
 
 var input = ['Name','Choose Class','Sex','Age','Address','Contact No.','Email']
 
 document.getElementById("book").style.display = "none"
+
 function create(train) {
     console.log(train['Train_No'])
     document.getElementById("book").style.display = "block"
     document.getElementById("create").style.display = "none"
     var x = document.getElementById("no-passenger").value
+    document.getElementById("count").value=x;
     x++
     // var form = document.createElement("FORM")
     var div = document.getElementById("container")
@@ -37,31 +38,26 @@ function create(train) {
 
         var cell2 = row2.insertCell(1);
         var catinput = document.createElement("select")
+        catinput.name = index + 'catagory';
         var option = document.createElement("option");
-        var option1 = document.createElement("option");
-        var option2 = document.createElement("option");
-        var option3 = document.createElement("option");
-        var option4 = document.createElement("option");
-        var option5 = document.createElement("option");
-        var option6 = document.createElement("option");
         option.text = "Fitst class (1A)";
         option.value = "1A";
-
+        var option1 = document.createElement("option");
         option1.text ="Second class (2A)";
         option1.value = "2A";
-
+        var option2 = document.createElement("option");
         option2.text ="Third Class AC(3A)";
         option2.value = "3A";
-
+        var option3 = document.createElement("option");
         option3.text ="First Class (Fc)";
         option3.value = "Fc";
-
+        var option4 = document.createElement("option");
         option4.text =" AC Chair Class (CC)";
         option4.value = "CC";
-
+        var option5 = document.createElement("option");
         option5.text ="Sleeper Class (SL)";
         option5.value = "SL";
-
+        var option6 = document.createElement("option");
         option6.text ="Second Class (2S)";
         option6.value = "2S";
 
@@ -96,20 +92,20 @@ function create(train) {
         var cell5 = row2.insertCell(4);
         var addinput = document.createElement("input")
         addinput.type = "text";
-        addinput.name = index + "Address"
+        addinput.name = index + "address"
         cell5.appendChild(addinput)
 
         var cell6 = row2.insertCell(5);
         var contactinput = document.createElement("input")
         contactinput.type = "number";
-        contactinput.name = index + "Contact No."
+        contactinput.name = index + "contact"
         cell6.appendChild(contactinput)
 
         var cell7 = row2.insertCell(6);
         var emailinput = document.createElement("input")
         emailinput.type = "email";
-        emailinput.name = index + "Email "
-        cell6.appendChild(emailinput)
+        emailinput.name = index + "email"
+        cell7.appendChild(emailinput)
     }
     div.append(table)
     console.log(div)

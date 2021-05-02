@@ -1,7 +1,9 @@
 <?php
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TicketController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TrainRouteController;
+use App\Http\Controllers\BookingController;
 
 // Route::get('/', function () {return view('welcome');});
 Route::get('/',[DashboardController::class,'index']);
@@ -24,14 +26,16 @@ Route::group(['middleware'=>['auth', 'role:admin']],function(){
 });
 
 Route::group(['middleware'=>['auth', 'role:user']],function(){
-    Route::get('/profile',[DashboardController::class,'dashboard']);
+    Route::get('/user_dashboard',[DashboardController::class,'dashboard']);
+	Route::get('/bookticket',[DashboardController::class,'bookticket'])->name('bookticket');
+	Route::get('ticketadd/{id}',[BookingController::class,'store'])->name('ticketadd');
+	Route::post('ticket', [TicketController::class,'create']);
 });
 
 Route::get('searchresult',[DashboardController::class,'searchResult'])->name('searchresult');
-Route::get('bookticket/{id}',[DashboardController::class,'bookticket'])->name('bookticket');
-Route::get('store_ticket/{id}/{userid}',[BookingController::class,'store_ticket'])->name('store_ticket');
 
-require _DIR_.'/auth.php';
+
+require __DIR__.'/auth.php';
 
 
 

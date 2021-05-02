@@ -84,7 +84,7 @@
                 <a class="nav-link text-white" href="#"><i class="fas fa-train"></i> Track Your Train</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="profile">Profile</a>
+                <a class="nav-link text-white" href="/user_dashboard">User Dashboard</a>
               </li>
               @elseif(Auth::user()->hasRole("admin"))
               <li class="nav-item">

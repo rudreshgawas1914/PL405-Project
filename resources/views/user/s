@@ -1,0 +1,72 @@
+<div class="row text-center">
+						<h1><strong>Booking Railway</strong></h1>
+						<h2>{{$train->Train_Name}} going from {{$train->Source_Location}} to {{$train->Destination}}</h2>
+					</div>
+
+
+                    </div>
+						<input type="number" name="no-passenger" value="no-passenger" id="no-passenger">
+						<button  class="btn btn-primary" onClick="create({{$train}})">OK</button>
+					</div>
+
+                    <form action="ticketadd/{{$train->id}}">
+					@csrf
+						<input type="hidden" name="count" id="count">
+						<div id="container" class="bg-warning"></div>
+						<input type="hidden" name="train-id" value="{{$train->id}}" id="">
+						<button type="submit" id="book" class="btn btn-primary" >Book</button>
+					</form>
+
+					if($request->input($i . '' . 'catagory')=='1A')//1A
+            {
+                $st->Seat_1A_availableseats=$st->Seat_1A_availableseats-1;
+            }else if($request->input($i . '' . 'catagory')=='2A')//2A
+            {
+                $st->Seat_2A_availableseats=$st->Seat_2A_availableseats-1;
+            }else if($request->input($i . '' . 'catagory')=='3A')//3A
+            {
+                $st->Seat_3A_availableseats=$st->Seat_3A_availableseats-1;
+            }else if($request->input($i . '' . 'catagory')=='FC')//FC
+            {
+                $st->Seat_FC_availableseats=$st->Seat_FC_availableseats-1;
+            }else if($request->input($i . '' . 'catagory')=='CC')//CC
+            {
+                $st->Seat_CC_availableseats=$st->Seat_CC_availableseats-1;
+            }else if($request->input($i . '' . 'catagory')=='SL')//SL
+            {
+                $st->Seat_SL_availableseats=$st->Seat_SL_availableseats-1;
+            }else if($request->input($i . '' . 'catagory')=='2S')//2S
+            {
+                $st->Seat_2S_availableseats=$st->Seat_2S_availableseats-1;
+            }
+            $st->save();
+
+			foreach($seats as $seat){
+                if($request->input($i . '' . 'catagory')=='1A')//1A
+                {
+                    $seat->Seat_1A_availableseats=$seat->Seat_1A_availableseats-1;
+                }else if($request->input($i . '' . 'catagory')=='2A')//2A
+                {
+                    $seat->Seat_2A_availableseats=$seat->Seat_2A_availableseats-1;
+                }else if($request->input($i . '' . 'catagory')=='3A')//3A
+                {
+                    $seat->Seat_3A_availableseats=$seat->Seat_3A_availableseats-1;
+                }else if($request->input($i . '' . 'catagory')=='FC')//FC
+                {
+                    $seat->Seat_FC_availableseats=$seat->Seat_FC_availableseats-1;
+                }else if($request->input($i . '' . 'catagory')=='CC')//CC
+                {
+                    $seat->Seat_CC_availableseats=$seat->Seat_CC_availableseats-1;
+                }else if($request->input($i . '' . 'catagory')=='SL')//SL
+                {
+                    $seat->Seat_SL_availableseats=$seat->Seat_SL_availableseats-1;
+                }else if($request->input($i . '' . 'catagory')=='2S')//2S
+                {
+                    $seat->Seat_2S_availableseats=$seat->Seat_2S_availableseats-1;
+                }
+            }
+
+
+			$seats = seats::find($tr);
+            $seats->Seat_1A_availableseats -= 1;
+            $seats->save();
