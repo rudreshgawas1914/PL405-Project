@@ -153,7 +153,6 @@ header {
 }
 
 .search-panel1-input{
-<<<<<<< HEAD
     margin-left: 1%;
 }
 
@@ -191,15 +190,14 @@ header {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-=======
-    margin: 1%;
->>>>>>> 32f32d3e2e1c5b0a6a1cda5312a67dd800aa1585
+
 }
 
 @media screen and (max-width: 1024px) {
     .leftTitle {
         display: none !important;
     }
+
 }
 input[type="text"] {
     font-family: FontAwesome;
@@ -338,6 +336,18 @@ input[type="text"] {
     .cat{
         width: 100%;
     }
+}
+
+
+
+
+/* BookTicket */
+#passenger{
+    background-color: red;
+}
+
+#table > td {
+    width: 10%;
 }
 
 

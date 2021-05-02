@@ -36,3 +36,6 @@ class CreateTrainRoutesTable extends Migration
         Schema::dropIfExists('train_routes');
     }
 }
+
+
+
