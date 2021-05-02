@@ -93,6 +93,32 @@
               <li class="nav-item">
                 <a class="nav-link text-white" href="admin/userlist">Users</a>
               </li>
+              @else
+              @foreach(DB::table('permission_role')->get() as $user)
+                @if($user->permission_id==Auth::user()->id)
+                  @if($user->role_id==1)
+                  <li class="nav-item">
+                    <a class="nav-link text-white" href="dashboard"><i class="fas fa-home"></i>Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-white" href="admin/userlist">Users</a>
+                  </li>
+                  @else
+                    <li class="nav-item">
+                      <a class="nav-link active text-white" aria-current="page" href="{{ url('/') }}"><i class="fas fa-home"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-white" href="#"><i class="fas fa-ticket-alt"></i> Book Tickets</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-white" href="#"><i class="fas fa-train"></i> Track Your Train</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-white" href="profile">Profile</a>
+                    </li>
+                  @endif
+                @endif
+              @endforeach
               @endif
               <li class="nav-item dropdown">
                 <a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">

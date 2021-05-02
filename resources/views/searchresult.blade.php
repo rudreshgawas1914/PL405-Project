@@ -9,73 +9,13 @@
                 @csrf
                     <div class="row align-center">
                         <div class="col-lg-3">
-                                <input type="text" class="form-control text-center search-panel1-input" id="From" name="from" placeholder="&#xf124 From" requiired>
+                            <input type="text" class="form-control text-center search-panel1-input" id="From" name="from" placeholder="&#xf124 From">
                         </div>
                         <div class="col-lg-3">
-<<<<<<< Updated upstream
-                                <input type="text" class="form-control text-center search-panel1-input" id="To" name="to" placeholder="&#xf3c5 To" required>
-                        </div>
-                        <!-- <div class="col-lg-2">
-=======
-<<<<<<< HEAD
-                    <div class="row align-center">
-                        <div class="col-lg-3">
-                                <input type="text" class="form-control text-center search-panel1-input" id="From" name="from" placeholder="&#xf124 From" requiired>
-                        </div>
-                        <div class="col-lg-3">
-=======
-                    <div class="row bg-warning">
-                        <div class="col-lg-2" style="margin-right: 15px;">
-                            <div class="row">
-                                <input type="text" class="form-control text-center search-panel1-input" id="From" name="from" placeholder="&#xf124 From" required>
-                            </div>
-                        </div>
-                        <div class="col-lg-2" style="margin-right: 15px;">
-                            <div class="row">
->>>>>>> 32f32d3e2e1c5b0a6a1cda5312a67dd800aa1585
-                                <input type="text" class="form-control text-center search-panel1-input" id="To" name="to" placeholder="&#xf3c5 To" required>
-                        </div>
-<<<<<<< HEAD
-                        <!-- <div class="col-lg-2">
-=======
-
-                        <!--
-                        <div class="col-lg-2" style="margin-right: 15px;">
->>>>>>> 32f32d3e2e1c5b0a6a1cda5312a67dd800aa1585
->>>>>>> 5d6b533dd5c72d890a79150b40878ea6e27f2450
-                            <div class="row">
-                                <input type="date" class="form-control text-center search-panel1-input" id="on" name="date" placeholder="&#65 Date">
-                            </div>
-                        </div>
-                        <div class="col-lg-2">
-                            <div class="row">
-                                <select class="form-select text-center search-panel1-input" aria-label="Default select example">
-                                    <option selected><i class="fas fa-briefcase"></i> All Classes</option>
-                                    <option value="1">First Class</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
-                            </div>
-<<<<<<< HEAD
-                        </div> -->
-                        <div class="col-lg-2">
-=======
-<<<<<<< HEAD
-                        </div> -->
-                        <div class="col-lg-2">
-=======
-                        </div>
-                    -->
-                        <div class="col-lg-2" >
-                            <div class="row">
->>>>>>> 32f32d3e2e1c5b0a6a1cda5312a67dd800aa1585
->>>>>>> 5d6b533dd5c72d890a79150b40878ea6e27f2450
-=======
-                                <input type="text" class="form-control text-center search-panel1-input" id="To" name="to" placeholder="&#xf3c5 To" required>
+                            <input type="text" class="form-control text-center search-panel1-input" id="To" name="to" placeholder="&#xf3c5 To" required>
                         </div>
                         <div class="col-lg-2" >
                             <div class="row">
->>>>>>> Stashed changes
                                 <button type="submit" class="btn btn-primary search-panel1-input"><i class="fas fa-search"></i> Search</button>
                         </div>
                     </div>
@@ -84,12 +24,7 @@
 @foreach($trainArr as $train)
 @if (strpos(strtoupper($train->Source_Location),strtoupper($from)) !== false)
     @if (strpos(strtoupper($train->Destination),strtoupper($to)) !== false)
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 5d6b533dd5c72d890a79150b40878ea6e27f2450
-        <div class="search-panel2">
+        <!-- <div class="search-panel2">
             <div class="row">
                 <h2><strong>{{$train->Train_Name}}(Train No : {{$train->Train_No}})</strong></h2>
             </div>
@@ -113,16 +48,9 @@
             </div>
             <div class="row">
                 <button type="button" onclick="">Book Ticket</button>
-<<<<<<< HEAD
             </div>
-=======
-            </div>
-=======
-        <div class="panel-create-train">
-            
-=======
+            </div> -->
         <div class="panel-create-train">          
->>>>>>> Stashed changes
             <div class="trainName">
                 <h4>{{$train->Train_Name}} &emsp; Train : {{$train->Train_No}} &nbsp;
                 <button type="button" class="btn btn-link">CHECK SEATS</button></h4></div>
@@ -132,12 +60,6 @@
                  {{$train->Arrival_Time}} || {{$train->Destination}}
             </div>  
             <div class="btn" style="margin-left: 70%;"><button type="button" class="btn btn-primary" onclick=""><i class="fas fa-search"></i>Book Ticket</button></div>
-<<<<<<< Updated upstream
-            
->>>>>>> 32f32d3e2e1c5b0a6a1cda5312a67dd800aa1585
->>>>>>> 5d6b533dd5c72d890a79150b40878ea6e27f2450
-=======
->>>>>>> Stashed changes
         </div>
     @endif
 @endif
