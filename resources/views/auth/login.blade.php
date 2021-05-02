@@ -33,11 +33,12 @@
                         {{ __('Forgot your password?') }}
                     </a>
                 @endif
-
+                <br>
+                <button class="btn btn-primary" style="margin-top: 20px">
                     {{ __('Log in') }}
                 </button>
             </div>
             </center>
         </form>
 </div>
-
+@endsection

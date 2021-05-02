@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ticket;
 use App\Models\train_route;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;

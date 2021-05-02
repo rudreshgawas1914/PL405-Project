@@ -9,7 +9,10 @@
                 @csrf
                     <div class="row align-center">
                         <div class="col-lg-3">
-
+                            <input type="text" class="form-control text-center" id="From" name="from" placeholder="&#xf124 From">
+                        </div>
+                        <div class="col-lg-3">
+                            <input type="text" class="form-control text-center" id="To" name="to" placeholder="&#xf3c5 To">
                         </div>
                         <div class="col-lg-2" >
                             <div class="row">
@@ -21,32 +24,6 @@
 @foreach($trainArr as $train)
 @if (strpos(strtoupper($train->Source_Location),strtoupper($from)) !== false)
     @if (strpos(strtoupper($train->Destination),strtoupper($to)) !== false)
-        <!-- <div class="search-panel2">
-            <div class="row">
-                <h2><strong>{{$train->Train_Name}}(Train No : {{$train->Train_No}})</strong></h2>
-            </div>
-            <div class="row station-details">
-                <div class="col-lg-6">
-                    <div class="row">
-                        <strong>{{$train->Departure_Time}}</strong>
-                        </div>
-                    <div class="row">
-                        <strong>{{$train->Source_Location}}</strong>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="row toright">
-                        <strong>{{$train->Arrival_Time}}</strong>
-                    </div>
-                    <div class="row toright">
-                        <strong>{{$train->Destination}}</strong>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <button type="button" onclick="">Book Ticket</button>
-            </div>
-            </div> -->
         <div class="panel-create-train">          
             <div class="trainName">
                 <h4>{{$train->Train_Name}} &emsp; Train : {{$train->Train_No}} &nbsp;
@@ -56,7 +33,14 @@
                     &emsp;
                  {{$train->Arrival_Time}} || {{$train->Destination}}
             </div>  
-
+            <form action="bookticket">
+                <div class="btn" style="margin-left: 70%;">
+                    <input type="hidden" name="train-id" value="{{$train->id}}">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-search"></i>Book Ticket
+                    </button>
+                </div>
+            </form>
         </div>
     @endif
 @endif
