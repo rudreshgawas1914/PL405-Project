@@ -16,10 +16,11 @@ body {
 header {
 }
 .panel-login {
-    margin: 20px;
+    margin: 20%;
     padding: 40px;
     padding-top: 0px;
     margin-top: 50px;
+    border-radius: 10px;
     background-color: #ffffff;
     border-color: #ccc;
     -webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
@@ -76,9 +77,9 @@ header {
         rgba(0, 0, 0, 0)
     );
 }
-.panel-login input[type="text"],
-.panel-login input[type="email"],
-.panel-login input[type="password"] {
+.panel-login > input[type="text"],
+.panel-login > input[type="email"],
+.panel-login > input[type="password"] {
     height: 45px;
     border: 1px solid #ddd;
     font-size: 16px;
@@ -189,16 +190,14 @@ header {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-<<<<<<< HEAD
-    /* margin: 1%; */
+
 }
 
 @media screen and (max-width: 1024px) {
     .leftTitle {
         display: none !important;
     }
-=======
->>>>>>> 5681d00953192cc8a9db322c963e960b7a05ddf8
+
 }
 input[type="text"] {
     font-family: FontAwesome;

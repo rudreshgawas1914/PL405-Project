@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\ticket;
+
 use App\Models\train_route;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -15,8 +15,8 @@ class DashboardController extends Controller
                 // return "guest";
                 return view('welcome');
             }else{
-                // return "not guest";
                 if(Auth::user()->hasRole('admin')){
+                    // return "admin";
                     return view('/admin/admin_dashboard')->with('trainArr',train_route::all());
                 }elseif(Auth::user()->hasRole('user')) {
                         return view('welcome');

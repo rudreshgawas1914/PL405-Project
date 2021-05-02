@@ -9,10 +9,7 @@
                 @csrf
                     <div class="row align-center">
                         <div class="col-lg-3">
-                            <input type="text" class="form-control text-center search-panel1-input" id="From" name="from" placeholder="&#xf124 From" required>
-                        </div>
-                        <div class="col-lg-3">
-                            <input type="text" class="form-control text-center search-panel1-input" id="To" name="to" placeholder="&#xf3c5 To">
+
                         </div>
                         <div class="col-lg-2" >
                             <div class="row">
@@ -59,16 +56,7 @@
                     &emsp;
                  {{$train->Arrival_Time}} || {{$train->Destination}}
             </div>  
-            <div class="btn" style="margin-left: 70%;">
-                <form action="bookticket">
-                <!-- <button type="button" class="btn btn-primary" onclick="window.location.href='bookticket'"> -->
-                <input type="hidden" name="train-id" value="{{$train->id}}">
-                <button type="submit" class="btn btn-primary">    
-                    <i class="fas fa-search"></i>
-                    Book Ticket
-                </button>
-                </form>
-            </div>
+
         </div>
     @endif
 @endif
