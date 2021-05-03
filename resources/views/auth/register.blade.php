@@ -52,7 +52,8 @@
                 <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
                     {{ __('Already registered?') }}
                 </a>
-
+                <br>
+                <button class="btn btn-primary" style="margin-top: 20px">
                     {{ __('Register') }}
                 </button>
             </div>

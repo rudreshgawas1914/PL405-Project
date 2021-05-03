@@ -32,7 +32,8 @@ class TicketController extends Controller
             $bt->train_id=$request->input('train-id');
             $bt->user_id=Auth::user()->id;
             $bt->name=$request->input($i . '' . 'name');
-            $bt->class=$request->input($i . '' . 'catagory');
+            // $bt->class=$request->input($i . '' . 'catagory');
+            $bt->class=$request->input('cat');
             $bt->gender=$request->input($i . '' . 'gender');
             $bt->age=$request->input($i . '' . 'age');
             $bt->address=$request->input($i . '' . 'address');
@@ -45,25 +46,25 @@ class TicketController extends Controller
 
             $seats = seats::where('trainroute_id',$tr)->take(1)->get();
             foreach ($seats as $seat) {
-                if($request->input($i . '' . 'catagory')=='1A')//1A
+                if($request->input('cat')=='1A')//1A
                 {
                     $seat->Seat_1A_availableseats=$seat->Seat_1A_availableseats-1;
-                }else if($request->input($i . '' . 'catagory')=='2A')//2A
+                }else if($request->input('cat')=='2A')//2A
                 {
                     $seat->Seat_2A_availableseats=$seat->Seat_2A_availableseats-1;
-                }else if($request->input($i . '' . 'catagory')=='3A')//3A
+                }else if($request->input('cat')=='3A')//3A
                 {
                     $seat->Seat_3A_availableseats=$seat->Seat_3A_availableseats-1;
-                }else if($request->input($i . '' . 'catagory')=='FC')//FC
+                }else if($request->input('cat')=='FC')//FC
                 {
                     $seat->Seat_FC_availableseats=$seat->Seat_FC_availableseats-1;
-                }else if($request->input($i . '' . 'catagory')=='CC')//CC
+                }else if($request->input('cat')=='CC')//CC
                 {
                     $seat->Seat_CC_availableseats=$seat->Seat_CC_availableseats-1;
-                }else if($request->input($i . '' . 'catagory')=='SL')//SL
+                }else if($request->input('cat')=='SL')//SL
                 {
                     $seat->Seat_SL_availableseats=$seat->Seat_SL_availableseats-1;
-                }else if($request->input($i . '' . 'catagory')=='2S')//2S
+                }else if($request->input('cat')=='2S')//2S
                 {
                     $seat->Seat_2S_availableseats=$seat->Seat_2S_availableseats-1;
                 }
@@ -71,8 +72,7 @@ class TicketController extends Controller
             }
         }
 
-        // return redirect('/user_dashboard')->with('userid',Auth::user()->id);
-        return 'ok';
+        return redirect('/user_dashboard')->with('userid',Auth::user()->id);
     }
 
     /**
@@ -129,5 +129,19 @@ class TicketController extends Controller
     public function destroy(ticket $ticket)
     {
         //
+    }
+
+    public function cancel(Request $req){
+        $t = ticket::find($req->input('ticketid'));
+        $t->status = 'cancelled';
+        $t->save();
+        $seats = seats::where('trainroute_id',$t->train_id)->get();
+        foreach ($seats as $seat) {
+            if($t->class=='1A'){
+                $seat->Seat_1A_availableseats += 1;
+            }
+            $seat->save();
+        }
+        return redirect('user_dashboard');
     }
 }

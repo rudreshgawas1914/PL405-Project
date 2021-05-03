@@ -21,8 +21,10 @@ Route::group(['middleware'=>['auth', 'role:admin']],function(){
     Route::post('train-submit',[TrainRouteController::class,'store']);
     Route::get('train-statuschange/{id}',[TrainRouteController::class,'changestatus']);
     Route::get('train-statusArrival/{id}',[TrainRouteController::class,'changeArrivalTime']);
+    Route::get('train-statusArrivalLoc/{id}',[TrainRouteController::class,'changeArrivalLoc']);
     Route::get('train-statusDeparture/{id}',[TrainRouteController::class,'changeDepartureTime']);
-    Route::get('train-updateform/{id}',[TrainRouteController::class,'updateform']);
+    Route::get('train-statusDepartureLoc/{id}',[TrainRouteController::class,'changeDepartureLoc']);
+    Route::get('train-updateform',[TrainRouteController::class,'updateform']);
 });
 
 Route::group(['middleware'=>['auth', 'role:user']],function(){
@@ -30,6 +32,7 @@ Route::group(['middleware'=>['auth', 'role:user']],function(){
 	Route::get('/bookticket',[DashboardController::class,'bookticket'])->name('bookticket');
 	Route::get('ticketadd/{id}',[BookingController::class,'store'])->name('ticketadd');
 	Route::post('ticket', [TicketController::class,'create']);
+    Route::post('ticketcancel', [TicketController::class,'cancel']);
 });
 
 Route::get('searchresult',[DashboardController::class,'searchResult'])->name('searchresult');

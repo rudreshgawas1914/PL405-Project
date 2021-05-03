@@ -59,3 +59,47 @@ function editDepartureTime(id,button,arival){
 	div.append(form)
 	console.log(div)
 }
+
+function editArrival(id,button){
+	var div = button.parentElement;
+	button.previousElementSibling.innerHTML = ""
+	button.remove()
+
+	var form = document.createElement('form');
+	form.setAttribute('action',"train-statusArrivalLoc/"+id);
+	var input = document.createElement("input")
+	input.type = "text"
+	input.setAttribute("class","form-control text-center")
+	input.name = "newData"
+
+	var submit = document.createElement('button');
+	submit.innerHTML = "Change"
+	submit.type = "submit"
+	submit.setAttribute("class","btn btn-primary")
+
+	form.append(input)
+	form.append(submit)
+	div.append(form)
+}
+
+function editDestination(id,button){
+	var div = button.parentElement;
+	button.previousElementSibling.innerHTML = ""
+	button.remove()
+
+	var form = document.createElement('form');
+	form.setAttribute('action',"train-statusDepartureLoc/"+id);
+	var input = document.createElement("input")
+	input.type = "text"
+	input.setAttribute("class","form-control text-center")
+	input.name = "newData"
+
+	var submit = document.createElement('button');
+	submit.innerHTML = "Change"
+	submit.type = "submit"
+	submit.setAttribute("class","btn btn-primary")
+
+	form.append(input)
+	form.append(submit)
+	div.append(form)
+}

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\ticket;
+use DB;
+use App\Models\seats;
 use App\Models\train_route;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -39,11 +41,11 @@ class DashboardController extends Controller
     }
 
     public function searchResult(Request $request){
-        return view('/searchresult')->with('trainArr',train_route::all())->with("from",$request->input("from"))->with("to",$request->input("to"));
+        return view('/searchresult')->with('trainArr',train_route::all())->with('seats',seats::all())->with("from",$request->input("from"))->with("to",$request->input("to"));
     }
 
     public function dashboard(){
-        return view('/user/user_dashboard')->with("userid",Auth::user()->id)->with('tickets',ticket::where('user_id',Auth::user()->id)->get());
+        return view('/user/user_dashboard')->with("userid",Auth::user()->id)->with('tickets',ticket::where('user_id',Auth::user()->id)->get())->with('trains',train_route::all());
     }
 
     public function traindetails(){
@@ -52,7 +54,8 @@ class DashboardController extends Controller
 
     public function bookticket(train_route $train_route,Request $request){
         $id = $request->input('train-id');
+        $cat = $request->input('cat');
         $tr = $train_route::find($id);
-        return view('user/bookticket')->with('train',$tr)->with("userid",Auth::user()->id);
+        return view('user/bookticket')->with('train',$tr)->with("userid",Auth::user()->id)->with("cat",$cat);
     }
 }

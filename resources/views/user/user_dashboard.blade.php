@@ -10,10 +10,18 @@
 <div class="card bg-danger">
 @endif
     <div class="card-body">
-    <h5 class="card-title">{{$ticket->name}}</h5>S
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <h5 class="card-title">{{$ticket->name}}</h5>
+    @foreach($trains as $train)
+      @if($train->id==$ticket->train_id)
+        <p class="card-text">{{$ticket->class}} ticket of {{$train->Source_Location}} to {{$train->Destination}} on {{$train->Arrival_Time}}</p>
+      @endif
+    @endforeach
     @if($ticket->status!="cancelled")
-    <a href="#" class="btn btn-primary">Cancel Ticket</a>
+    <form action="ticketcancel" method="POST">
+      @csrf
+    <input type="hidden" name="ticketid" value="{{$ticket->id}}">
+    <button type="submit" class="btn btn-primary">Cancel Ticket</button>
+    </form>
     @endif 
   </div>
 </div>

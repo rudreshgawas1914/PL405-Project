@@ -152,7 +152,7 @@ header {
     height: auto;
 }
 
-.search-panel1-input{
+.search-panel1-input {
     margin-left: 1%;
 }
 
@@ -168,13 +168,13 @@ header {
     /*padding: 1%;*/
 }
 
-.search-panel2 > .station-details > div{
+.search-panel2 > .station-details > div {
     background-color: lightblue;
     padding: 1%;
     font-size: 120%;
 }
 
-.toright{
+.toright {
     text-align: right;
 }
 
@@ -190,18 +190,17 @@ header {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-
 }
 
 @media screen and (max-width: 1024px) {
     .leftTitle {
         display: none !important;
     }
-
 }
 input[type="text"] {
     font-family: FontAwesome;
 }
+
 /* ///DASHBOARD LAYOUT/// */
 .display-trains {
     margin: 1%;
@@ -243,29 +242,26 @@ input[type="text"] {
     background-color: white;
     border: solid 1px black;
 }
-<<<<<<< Updated upstream
-=======
 
 ::-webkit-scrollbar {
-  width: 5px;
+    width: 5px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: none
+    background: none;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #cca300; 
+    background: #cca300;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #997a00; 
+    background: #997a00;
 }
 
->>>>>>> Stashed changes
 /*CREATE TRAIN FORM*/
 .panel-create-train {
     margin: 20px;
@@ -281,25 +277,24 @@ input[type="text"] {
     box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
 }
 
-.trainName{
-    padding: 1% 1% 3% 1%; 
-    background-color:#B0C4DE; 
-    height:35px; 
+.trainName {
+    padding: 1% 1% 3% 1%;
+    background-color: #b0c4de;
+    height: 35px;
     margin-top: 2px;
 }
 
-.trainTime{
-    padding: 1% 1% 3% 1%; 
-    background-color:#FFE4C4; 
-    height:35px; 
+.trainTime {
+    padding: 1% 1% 3% 1%;
+    background-color: #ffe4c4;
+    height: 35px;
 }
 
-.btn btn-link{
+.btn btn-link {
     margin-left: 70%;
 }
 
-
-.cat{
+.cat {
     background-color: gray;
     margin: 10px;
     padding: 10px;
@@ -309,23 +304,22 @@ input[type="text"] {
     height: auto;
 }
 
-.cat > input{
+.cat > input {
     /*width: 10%;*/
 }
 
-.cat > div{
+.cat > div {
     transition: width 2s;
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s, opacity 0.5s linear;
 }
 
-.cat > div > input{
+.cat > div > input {
     width: 90%;
 }
 
-.prize-admin{
-    
+.prize-admin {
 }
 
 @media screen and (max-width: 1024px) {
@@ -333,23 +327,39 @@ input[type="text"] {
         display: none !important;
     }
 
-    .cat{
+    .cat {
         width: 100%;
     }
 }
 
-
-
-
 /* BookTicket */
-#passenger{
-    background-color: red;
+#passenger {
+    background-color: none;
+}
+
+#passenger > tbody > tr > td > input,
+select {
+    /* border : solid black; */
 }
 
 #table > td {
     width: 10%;
 }
 
+/*
+SEARCH DIV*/
+.display-cat {
+    background-color: lightblue;
+}
+
+.display-cat > table {
+    width: 100%;
+}
+
+.display-cat > table > tbody > tr,
+td {
+    text-align: center;
+}
 
 footer {
     margin: 0;
@@ -358,4 +368,4 @@ footer {
 /* containers */
 form > div {
     padding: 10px;
-   } 
+}

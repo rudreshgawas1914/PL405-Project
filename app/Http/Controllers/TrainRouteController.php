@@ -122,7 +122,7 @@ class TrainRouteController extends Controller
      * @param  \App\Models\train_route  $train_route
      * @return \Illuminate\Http\Response
      */
-    public function show(train_route $train_route)
+    public function show()
     {
         return view('/admin/admin_dashboard');
     }
@@ -133,7 +133,7 @@ class TrainRouteController extends Controller
      * @param  \App\Models\train_route  $train_route
      * @return \Illuminate\Http\Response
      */
-    public function edit(train_route $train_route)
+    public function edit()
     {
         //
     }
@@ -146,12 +146,13 @@ class TrainRouteController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function updateform(train_route $train_route,$id){
+    public function updateform(Request $request){
+        $id=$request->input('train-id');
         $tr = train_route::find($id);
         return view("/admin/admin_editTrain")->with('train',$tr);
     }
 
-    public function update(Request $request, train_route $train_route)
+    public function update(Request $request)
     {
         //
     }
@@ -170,7 +171,7 @@ class TrainRouteController extends Controller
         return redirect('admindashboard');
     }
 
-    public function changestatus(train_route $train_route,$id,Request $request){
+    public function changestatus($id,Request $request){
         $tr = train_route::find($id);
         if($tr->Status==$request->input('status')){
             return redirect('admindashboard');
@@ -181,7 +182,7 @@ class TrainRouteController extends Controller
         }
     }
 
-    public function changeArrivalTime(train_route $train_route,Request $request,$id){
+    public function changeArrivalTime(Request $request,$id){
         $tr = train_route::find($id);
         if($tr->Departure_Time==$request->input('newtime')){
             return redirect('admindashboard');
@@ -192,12 +193,34 @@ class TrainRouteController extends Controller
         }
     }
 
-    public function changeDepartureTime(train_route $train_route,Request $request,$id){
+    public function changeArrivalLoc(Request $request,$id){
+        $tr = train_route::find($id);
+        if($tr->Source_Location==$request->input('newData')){
+            return redirect('admindashboard');
+        }else{
+        $tr->Source_Location=$request->input('newData');
+        $tr->save();
+            return redirect('admindashboard');
+        }
+    }
+
+    public function changeDepartureTime(Request $request,$id){
         $tr = train_route::find($id);
         if($tr->Arrival_Time==$request->input('newtime')){
             return redirect('admindashboard');
         }else{
         $tr->Arrival_Time=$request->input('newtime');
+        $tr->save();
+            return redirect('admindashboard');
+        }
+    }
+
+    public function changeDepartureLoc(Request $request,$id){
+        $tr = train_route::find($id);
+        if($tr->Destination==$request->input('newData')){
+            return redirect('admindashboard');
+        }else{
+        $tr->Destination=$request->input('newData');
         $tr->save();
             return redirect('admindashboard');
         }

@@ -47,7 +47,7 @@
                       <a class="nav-link active text-white" aria-current="page" href="{{ url('/') }}"><i class="fas fa-home"></i> Home</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link text-white" href="#"><i class="fas fa-ticket-alt"></i> Book Tickets</a>
+                      <a class="nav-link text-white" href="searchresult"><i class="fas fa-ticket-alt"></i> Book Tickets</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link text-white" href="#"><i class="fas fa-train"></i> Track Your Train</a>
@@ -78,7 +78,7 @@
                 <a class="nav-link active text-white" aria-current="page" href="{{ url('/') }}"><i class="fas fa-home"></i> Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="#"><i class="fas fa-ticket-alt"></i> Book Tickets</a>
+                <a class="nav-link text-white" href="searchresult"><i class="fas fa-ticket-alt"></i> Book Tickets</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link text-white" href="#"><i class="fas fa-train"></i> Track Your Train</a>
@@ -93,6 +93,9 @@
               <li class="nav-item">
                 <a class="nav-link text-white" href="admin/userlist">Users</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="ticketcancelrequest">Ticket Cancel Requests</a>
+              </li>
               @else
               @foreach(DB::table('permission_role')->get() as $user)
                 @if($user->permission_id==Auth::user()->id)
@@ -105,7 +108,7 @@
                   </li>
                   @else
                     <li class="nav-item">
-                      <a class="nav-link active text-white" aria-current="page" href="{{ url('/') }}"><i class="fas fa-home"></i> Home</a>
+                      <a class="nav-link active text-white" aria-current="page" href="dashboard"><i class="fas fa-home"></i> Home</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link text-white" href="#"><i class="fas fa-ticket-alt"></i> Book Tickets</a>

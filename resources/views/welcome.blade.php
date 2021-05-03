@@ -23,20 +23,8 @@
 									<div class="row">
 										<input type="text" class="form-control text-center" id="To" name="to" placeholder="&#xf3c5 To">
 									</div>
-							<!-- <div class="row">
-								<input type="date" class="form-control text-center" id="on" name="date" placeholder="&#65 Date">
+								</div>
 							</div>
-							<div class="row">
-								<select class="form-select text-center" aria-label="Default select example">
-									<option selected><i class="fas fa-briefcase"></i> All Classes</option>
-									<option value="1">First Class</option>
-									<option value="2">Two</option>
-									<option value="3">Three</option>
-								</select>
-								<input type="text" class="form-control text-center" id="catagory" placeholder="catagory">
-							</div> -->
-						</div>
-					</div>
 					<center><button type="submit" class="btn btn-primary"><i class="fas fa-search"></i> Search</button></center>
 				</form>
 			</div>
